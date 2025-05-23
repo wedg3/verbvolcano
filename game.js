@@ -280,11 +280,11 @@
                 let beforeMatchWidth = ctx.measureText(beforeMatch).width;
 
                 let unmatchedColor = 'rgba(242, 189, 13, 1)'; // Default color for unmatched part
-                if (score >= 10 && score <= 20) {
+                if (score >= 1 && score <= 2) {
                     unmatchedColor = 'black'; // Make text invisible at certain score
                     ctx.shadowColor = 'rgba(255, 209, 110, 0.35)';
                     ctx.shadowBlur = 8; // Add shadow to hint at word position
-                } else if (score >= 70) {
+                } else if (score >= 3) {
                     unmatchedColor = 'black'; // Completely invisible at higher score
                 } else {
                     ctx.shadowBlur = 0;
