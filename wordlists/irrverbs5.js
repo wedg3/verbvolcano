@@ -1,4 +1,4 @@
-const wordlisttitle = "Irregular Verbs: eat, become, say, teach, buy";
+const wordlisttitle = "Irregular Verbs 5: eat, become, say, teach, buy";
 
 const words = [
     { english: "ate", swedish: "He (eat) lunch at noon." },
