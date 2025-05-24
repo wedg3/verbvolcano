@@ -1,4 +1,4 @@
-const wordlisttitle = "Irregular Verbs: sit, fall, bring, write, hold";
+const wordlisttitle = "Irregular Verbs 2: sit, fall, bring, write, hold";
 
 const words = [
     { english: "sat", swedish: "He (sit) on the bench." },
