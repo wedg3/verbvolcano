@@ -1,4 +1,4 @@
-const wordlisttitle = "Irregular Verbs: meet, hear, drink, feel, see";
+const wordlisttitle = "Irregular Verbs 1: meet, hear, drink, feel, see";
 
 const words = [
     { english: "met", swedish: "They (meet) him last week." },
