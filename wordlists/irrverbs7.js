@@ -1,4 +1,4 @@
-const wordlisttitle = "Irregular Verbs: grow, do, sell, dig, lay";
+const wordlisttitle = "Irregular Verbs 7: grow, do, sell, dig, lay";
 
 const words = [
     { english: "grew", swedish: "He (grow) tomatoes last summer." },
