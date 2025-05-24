@@ -33,19 +33,7 @@
 		  font-size: 24px;
 		}
         
-        /* Styling for the lava at the bottom of the screen */
-        /*   < #lava {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 128px;  /* Use vh to make height proportional to the viewport */
-           /*  background: url('images/purplelava1.gif') center center repeat; /* Set lava image as background */
-          /*   // background-size: cover; /* Ensure the image covers the entire area */
-          /*   z-index: 2000; /* Ensure the lava is behind the other elements */   
-       /*  }
-        
-        /* Styling for the splash screen */
+      
         #splashScreen {  
 			background-color: rgba(0, 0, 0, 0.5);	
 			width: 500px;
@@ -76,7 +64,7 @@
             margin-bottom: 4px;
 			margin-top: 4px;
 			color: #fffff;
-			letter-spacing:5px;
+			letter-spacing:3px;
 			
 			
         }
@@ -133,19 +121,21 @@
     }
  table {
     border-collapse: collapse;
-	margin-top: 20px;
+	margin-top: 30px;
   }
 
   th, td {
     padding: 12px 12px;
     border-left: 1px solid #000;
     border-right: 1px solid #000;
-    border-bottom: 2px solid #FFF;
+    
   }
 
   th {
-    color: #FFFFFF;
+    color: #000000;
 	background-color: #000000;
+	border-bottom: 2px solid #FFF;
+
   }
 
   tr:first-child th {
@@ -172,10 +162,11 @@
 </head>
 <body>
   	    <div id="splashScreen">
-		<h1 id="flashtitle">Verb Volcano Collection</h1>
+		<h1 id="flashtitle">Verb Volcano Collections</h1>
 		<h2 >Study the verbs</h2>
-		<h2 >Click the number to practice them</h2>
-		<h2 >Scroll down for more</h2>
+		<h2 >Click the <font color="#0099ff">number</font> to practice them</h2>
+		<br>
+		<h2 ><i>Scroll down for more</i></h2>
 		
 		
 <table>
