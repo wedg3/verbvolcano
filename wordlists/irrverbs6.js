@@ -1,4 +1,4 @@
-const wordlisttitle = "Irregular Verbs: give, think, lead, drive, speak";
+const wordlisttitle = "Irregular Verbs 6: give, think, lead, drive, speak";
 
 const words = [
     { english: "gave", swedish: "He (give) me a pen." },
