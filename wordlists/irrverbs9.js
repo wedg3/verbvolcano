@@ -1,4 +1,4 @@
-const wordlisttitle = "Irregular Verbs: hide, ring, dream, fight, lend";
+const wordlisttitle = "Irregular Verbs 9: hide, ring, dream, fight, lend";
 
 const words = [
     { english: "hid", swedish: "He (hide) behind the curtain." },
