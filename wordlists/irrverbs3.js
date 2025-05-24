@@ -1,4 +1,4 @@
-const wordlisttitle = "Irregular Verbs: break, go, catch, know, blow";
+const wordlisttitle = "Irregular Verbs 3: break, go, catch, know, blow";
 
 const words = [
     { english: "broke", swedish: "He (break) the glass yesterday." },
