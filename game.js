@@ -251,48 +251,86 @@
                 }
             }
 
-            draw() {
-                ctx.textAlign = 'left';
-                ctx.textBaseline = 'middle';
-                ctx.font = '18px Rethink Sans';
-                ctx.shadowBlur = 0;
-                ctx.fillStyle = '#FFFFFF';
-                const swedishTextWidth = ctx.measureText(this.swedish).width;
-                const swedishStartX = this.x - swedishTextWidth / 2;
-                ctx.fillText(this.swedish, swedishStartX, this.y - 30); // Draw Swedish translation above the word
+		draw() {
+		    ctx.textAlign = 'left';
+		    ctx.textBaseline = 'middle';
+		    ctx.font = '18px Rethink Sans';
+		    ctx.shadowBlur = 0;
+		
+		    // === Handle swedishText with red italics for parenthesis ===
+		    let swedish = this.swedish;
+		    const parenMatch = swedish.match(/\(.*?\)/);
+		    
+		    if (parenMatch) {
+		        const matchStart = parenMatch.index;
+		        const matchEnd = matchStart + parenMatch[0].length;
+		        const before = swedish.substring(0, matchStart);
+		        const paren = swedish.substring(matchStart, matchEnd);
+		        const after = swedish.substring(matchEnd);
+		
+		        const beforeWidth = ctx.measureText(before).width;
+		        const parenWidth = ctx.measureText(paren).width;
+		
+		        const totalWidth = beforeWidth + parenWidth + ctx.measureText(after).width;
+		        const startX = this.x - totalWidth / 2;
+		        const y = this.y - 30;
+		
+		        // Draw before text
+		        ctx.fillStyle = '#FFFFFF';
+		        ctx.font = '18px Rethink Sans';
+		        ctx.fillText(before, startX, y);
+		
+		        // Draw red italics for parentheses
+		        ctx.fillStyle = 'red';
+		        ctx.font = 'italic 18px Rethink Sans';
+		        ctx.fillText(paren, startX + beforeWidth, y);
+		
+		        // Draw after text
+		        ctx.fillStyle = '#FFFFFF';
+		        ctx.font = '18px Rethink Sans';
+		        ctx.fillText(after, startX + beforeWidth + parenWidth, y);
+		    } else {
+		        // No parentheses: draw as usual
+		        const swedishTextWidth = ctx.measureText(swedish).width;
+		        const swedishStartX = this.x - swedishTextWidth / 2;
+		        ctx.fillStyle = '#FFFFFF';
+		        ctx.font = '18px Rethink Sans';
+		        ctx.fillText(swedish, swedishStartX, this.y - 30);
+		    }
+		
+		    // === Handle English text (your original code) ===
+		    ctx.font = '22px Rethink Sans';
+		    let beforeMatch = this.english.substring(0, this.matchedLength); // Matched part of the word
+		    let afterMatch = this.english.substring(this.matchedLength); // Unmatched part
+		    let totalTextWidth = ctx.measureText(this.english).width;
+		    let startX = this.x - totalTextWidth / 2;
+		
+		    if (this.isAscending) {
+		        ctx.fillStyle = 'rgba(0, 255, 255, 1)';
+		        ctx.shadowColor = 'white';
+		        ctx.shadowBlur = 10;
+		    } else {
+		        ctx.fillStyle = 'rgba(59, 247, 75, 1)';
+		    }
+		
+		    ctx.fillText(beforeMatch, startX, this.y);
+		    let beforeMatchWidth = ctx.measureText(beforeMatch).width;
+		
+		    let unmatchedColor = 'rgba(242, 189, 13, 1)';
+		    if (score >= 1 && score <= 2) {
+		        unmatchedColor = 'black';
+		        ctx.shadowColor = 'rgba(255, 209, 110, 0.35)';
+		        ctx.shadowBlur = 8;
+		    } else if (score >= 3) {
+		        unmatchedColor = 'black';
+		    } else {
+		        ctx.shadowBlur = 0;
+		    }
+		
+		    ctx.fillStyle = unmatchedColor;
+		    ctx.fillText(afterMatch, startX + beforeMatchWidth, this.y);
+		}
 
-                ctx.font = '22px Rethink Sans';
-                let beforeMatch = this.english.substring(0, this.matchedLength); // Matched part of the word
-                let afterMatch = this.english.substring(this.matchedLength); // Unmatched part
-                let totalTextWidth = ctx.measureText(this.english).width;
-                let startX = this.x - totalTextWidth / 2;
-
-                if (this.isAscending) {
-					ctx.fillStyle = 'rgba(0, 255, 255, 1)'; // Set ascending word color to white
-                    ctx.shadowColor = 'white';
-                    ctx.shadowBlur = 10; // Add shadow to hint at word position
-
-                } else {
-                    ctx.fillStyle = 'rgba(59, 247, 75, 1)';
-                }
-                
-                ctx.fillText(beforeMatch, startX, this.y); // Draw matched part
-                let beforeMatchWidth = ctx.measureText(beforeMatch).width;
-
-                let unmatchedColor = 'rgba(242, 189, 13, 1)'; // Default color for unmatched part
-                if (score >= 1 && score <= 2) {
-                    unmatchedColor = 'black'; // Make text invisible at certain score
-                    ctx.shadowColor = 'rgba(255, 209, 110, 0.35)';
-                    ctx.shadowBlur = 8; // Add shadow to hint at word position
-                } else if (score >= 3) {
-                    unmatchedColor = 'black'; // Completely invisible at higher score
-                } else {
-                    ctx.shadowBlur = 0;
-                }
-
-                ctx.fillStyle = unmatchedColor;
-                ctx.fillText(afterMatch, startX + beforeMatchWidth, this.y); // Draw unmatched part
-            }
         }
 
         // Function to spawn a new word
