@@ -17,10 +17,37 @@ const words = [
     { english: "heard", swedish: "He has (hear) this before." },
     { english: "drank", swedish: "She (drink) the milk fast." },
     { english: "drunk", swedish: "I have (drink) too much." },
+    { english: "met", swedish: "I (meet) her last night." },
+    { english: "met", swedish: "They have (meet) before." },
+    { english: "heard", swedish: "She (hear) a strange sound." },
+    { english: "heard", swedish: "We have (hear) the news." },
+    { english: "drank", swedish: "He (drink) all the milk." },
+    { english: "drunk", swedish: "She has (drink) too much." },
+    { english: "felt", swedish: "I (feel) cold this morning." },
+    { english: "felt", swedish: "He has (feel) sad lately." },
+    { english: "saw", swedish: "She (see) a movie yesterday." },
+    { english: "seen", swedish: "We have (see) that before." },
+    { english: "met", swedish: "You (meet) him at the party." },
+    { english: "met", swedish: "I have (meet) your brother." },
+    { english: "heard", swedish: "They (hear) the bell ring." },
+    { english: "heard", swedish: "I have (hear) this song." },
+    { english: "drank", swedish: "They (drink) coffee this morning." },
+    { english: "drunk", swedish: "He has (drink) his tea." },
+    { english: "felt", swedish: "She (feel) tired yesterday." },
+    { english: "felt", swedish: "They have (feel) better now." },
+    { english: "saw", swedish: "I (see) her at the mall." },
+    { english: "seen", swedish: "He has (see) this place." },
+    { english: "met", swedish: "She (meet) the teacher today." },
+    { english: "heard", swedish: "You (hear) the alarm sound." },
+    { english: "drank", swedish: "I (drink) juice this morning." },
+    { english: "felt", swedish: "We (feel) the earthquake." },
     { english: "felt", swedish: "He (feel) bad this morning." },
     { english: "felt", swedish: "She has (feel) the pain." },
     { english: "saw", swedish: "They (see) a rainbow today." },
     { english: "seen", swedish: "He has (see) the answer." }
+    
+
+    
 ];
 
 document.getElementById("dynamic-heading").textContent = wordlisttitle;
