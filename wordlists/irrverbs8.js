@@ -1,4 +1,4 @@
-const wordlisttitle = "Irregular Verbs: deal, freeze, keep, ride, bite";
+const wordlisttitle = "Irregular Verbs 8: deal, freeze, keep, ride, bite";
 
 const words = [
     { english: "dealt", swedish: "He (deal) with the problem." },
